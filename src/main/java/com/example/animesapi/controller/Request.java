@@ -71,10 +71,10 @@ public class Request {
             auxJson[i] = animeArray[i][0];
 
         }
-        String readyJson = gson.toJson(auxJson);
+        String readyJson = gson.toJson(auxJson);//isso é um json string... tem diferença
         JSONArray jsonArray = new JSONArray(readyJson);
 
-
+        //percorrendo o json array e passando as propriedades para o objeto anime
         for(int i =0; i < auxJson.length; i++){
             Anime animeAux = new Anime(); //me fodi nessa hora por que tinha criado o anime antes do looping dai ele ficava resetando no primeiro looping e trazia os mesmos dados
             animeAux.setTitle(jsonArray.getJSONObject(i).get("title").toString());
